@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
-import { SET_SEARCH_KEY, SET_VIDEOS } from '../actions';
+import { SET_SEARCH_KEY, SET_VIDEOS, SET_SELECTED_VIDEO } from '../actions';
 
 const searchText = handleActions(
     {
@@ -16,9 +16,17 @@ const videos = handleActions(
     []
 );
 
+const selectedVideo = handleActions(
+    {
+        [SET_SELECTED_VIDEO]: (state, action) => action.payload
+    },
+    null
+)
+
 const rootReducer = combineReducers({
   searchText,
-  videos
+  videos,
+  selectedVideo
 });
 
 export default rootReducer;

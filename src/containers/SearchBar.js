@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import { setSearchKey, search } from '../actions';
 
 class SearchBar extends Component {
-    onSearchKeyChange(event) {
-        let value = event.target.value;
-
+    onSearchKeyChange(value) {
         this.props.setSearchKey(value);
         this.props.search(value);
     }
 
     render() {
+        let delay = _.debounce( (value) => this.onSearchKeyChange(value), 1500);
+
         return (
-            <div className="col-md-8">
-                <input className="form-control" type="text" placeholder="Search a video"
-                    onChange={ this.onSearchKeyChange.bind(this) } />
-            </div>
+            <input className="form-control" type="text" placeholder="Search a video"
+                onChange={ (event) => delay(event.target.value) } />
         )
     };
 }
