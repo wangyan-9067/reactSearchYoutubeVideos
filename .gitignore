@@ -1,5 +1,6 @@
 /node_modules
 bundle.js
+main.css
 npm-debug.log
 .DS_Store
 

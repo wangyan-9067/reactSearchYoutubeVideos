@@ -4,9 +4,9 @@ import { SET_SEARCH_KEY, SET_VIDEOS, SET_SELECTED_VIDEO } from '../actions';
 
 const searchText = handleActions(
     {
-        [SET_SEARCH_KEY]: (state, action) => action.payload
+        [SET_SEARCH_KEY]: (state, action) => ({ ... state, searchText: action.payload })
     },
-    ""
+    { searchText: "" }
 );
 
 const videos = handleActions(

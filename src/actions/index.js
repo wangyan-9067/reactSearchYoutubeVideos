@@ -11,7 +11,6 @@ export const setSearchKey = createAction(SET_SEARCH_KEY);
 export const setSelectedVideo = createAction(SET_SELECTED_VIDEO);
 
 export const search = createAction(SET_VIDEOS, value => {
-    console.log("search key: " + value);
     let promise = new Promise(function (resolve) {
         searchYouTube({key: API_KEY, term: value, maxResults: 6}, (videos) => {
             resolve(videos);
