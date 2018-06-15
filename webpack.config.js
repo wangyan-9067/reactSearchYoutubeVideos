@@ -1,5 +1,3 @@
-'use strict';
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
@@ -23,7 +21,8 @@ module.exports = {
                         options: {
                             presets: ['react', 'es2015', 'stage-1']
                         }
-                    }
+                    },
+                    'eslint-loader'
                 ]
             },
             {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class SelectedVideo extends Component {
     render() {
@@ -21,6 +22,10 @@ class SelectedVideo extends Component {
 
 function mapStateToProps({ selectedVideo }) {
     return { selectedVideo };
+}
+
+SelectedVideo.propTypes = {
+    selectedVideo: PropTypes.object
 }
 
 export default connect(mapStateToProps)(SelectedVideo);
