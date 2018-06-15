@@ -1,3 +1,10 @@
 .videolist-video-cell {
     height: 150px;
 }
+
+.selectedVideo-image {
+    width: 180px;
+    height: 180px;
+    background: url("../images/home.png");
+    background-size: cover;
+}

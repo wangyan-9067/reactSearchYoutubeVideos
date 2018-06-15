@@ -11,6 +11,7 @@ class SelectedVideo extends Component {
 
         return (
             <div>
+                <div className="selectedVideo-image"></div>
                 <h4>{ title }</h4>
                 <div>{ description }</div>
             </div>
